@@ -1,0 +1,25 @@
+timestamp,event_type,source,username,source_ip,destination_ip,hostname,severity
+2026-09-09 09:00:12,login_success,auth_server,alice,192.168.1.20,,workstation-01,low
+2026-09-09 09:05:41,file_access,file_server,alice,192.168.1.20,,workstation-01,low
+2026-09-09 09:12:08,login_success,auth_server,bob,192.168.1.21,,workstation-02,low
+2026-09-09 09:18:33,file_access,file_server,bob,192.168.1.21,,workstation-02,low
+2026-09-09 09:25:19,process_start,endpoint,alice,192.168.1.20,,workstation-01,low
+2026-09-09 09:31:52,dns_query,dns_server,alice,192.168.1.20,8.8.8.8,workstation-01,low
+2026-09-09 09:42:17,login_success,auth_server,charlie,192.168.1.22,,workstation-03,low
+2026-09-09 09:48:29,file_access,file_server,charlie,192.168.1.22,,workstation-03,low
+2026-09-09 10:02:14,login_failed,auth_server,alice,192.168.1.20,,workstation-01,medium
+2026-09-09 10:02:19,login_failed,auth_server,alice,192.168.1.20,,workstation-01,medium
+2026-09-09 10:02:24,login_failed,auth_server,alice,192.168.1.20,,workstation-01,medium
+2026-09-09 10:03:01,login_success,auth_server,alice,192.168.1.20,,workstation-01,medium
+2026-09-09 10:08:45,process_start,endpoint,alice,192.168.1.20,,workstation-01,medium
+2026-09-09 10:09:12,dns_query,dns_server,alice,192.168.1.20,203.0.113.50,workstation-01,high
+2026-09-09 10:10:03,network_connection,firewall,alice,192.168.1.20,203.0.113.50,workstation-01,high
+2026-09-09 10:11:27,file_access,file_server,alice,192.168.1.20,,server-finance,high
+2026-09-09 10:12:41,privilege_change,auth_server,alice,192.168.1.20,,server-finance,critical
+2026-09-09 10:13:05,process_start,endpoint,alice,192.168.1.20,,server-finance,critical
+2026-09-09 10:14:22,network_connection,firewall,alice,192.168.1.20,203.0.113.50,server-finance,critical
+2026-09-09 10:20:17,login_success,auth_server,david,192.168.1.23,,workstation-04,low
+2026-09-09 10:24:31,file_access,file_server,david,192.168.1.23,,workstation-04,low
+2026-09-09 10:31:46,dns_query,dns_server,david,192.168.1.23,8.8.4.4,workstation-04,low
+2026-09-09 10:40:02,login_success,auth_server,emma,192.168.1.24,,workstation-05,low
+2026-09-09 10:46:18,file_access,file_server,emma,192.168.1.24,,workstation-05,low
