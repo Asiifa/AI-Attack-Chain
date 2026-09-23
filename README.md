@@ -319,30 +319,27 @@ http://localhost:8000/docs
 AI-Attack-Chain/
 │
 ├── backend/
+│   ├── main.py
+│   │
 │   ├── database/
 │   │   ├── connection.py
 │   │   └── schema.py
 │   │
-│   ├── services/
-│   │   ├── ingestion.py
-│   │   ├── anomaly_detection.py
-│   │   ├── correlation.py
-│   │   ├── reconstruction.py
-│   │   ├── risk.py
-│   │   ├── evidence.py
-│   │   └── explanation.py
-│   │
-│   └── main.py
+│   └── services/
+│       ├── ingestion.py
+│       ├── anomaly_detection.py
+│       ├── correlation.py
+│       ├── reconstruction.py
+│       ├── risk.py
+│       ├── evidence.py
+│       └── explanation.py
 │
 ├── frontend/
-│   ├── pages/
-│   │   └── Investigation.jsx
-│   │
 │   ├── src/
 │   │   ├── pages/
+│   │   │   └── Investigation.jsx
 │   │   ├── services/
 │   │   └── ...
-│   │
 │   └── ...
 │
 ├── data/
@@ -350,10 +347,14 @@ AI-Attack-Chain/
 │       └── sample_logs.csv
 │
 ├── screenshots/
+│   ├── dashboard.png
+│   ├── incidents.png
+│   └── investigation.png
 │
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+
 
 🧪 Testing
 
