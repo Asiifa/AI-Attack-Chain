@@ -1,324 +1,325 @@
-🛡️ AI Attack Chain Investigator
+# 🛡️ AI Attack Chain Investigator
 
-An AI-based cybersecurity investigation system that reconstructs suspicious activity from security logs, calculates incident risk, extracts evidence, and generates explainable incident assessments.
+### AI-Based Cybersecurity Investigation & Explainable Incident Analysis
 
+AI Attack Chain Investigator is an AI-based cybersecurity investigation system that reconstructs suspicious activity from security logs, calculates incident risk, extracts supporting evidence, and generates explainable incident assessments.
 
+The system transforms raw security logs into structured events, identifies anomalies, correlates related activities, reconstructs potential attack chains, and presents investigation results through a modern SOC-style dashboard.
 
+> **Project Type:** Full-Stack Cybersecurity Application  
+> **Version:** 1.0.0  
+> **Frontend:** React + Vite  
+> **Backend:** Python + FastAPI  
+> **Database:** SQLite
 
+---
 
+## 📑 Table of Contents
 
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [System Architecture](#-system-architecture)
+- [Investigation Workflow](#-investigation-workflow)
+- [Technology Stack](#-technology-stack)
+- [Project Structure](#-project-structure)
+- [Installation & Setup](#-installation--setup)
+- [Running the Application](#-running-the-application)
+- [API Endpoints](#-api-endpoints)
+- [Dashboard & Investigation](#-dashboard--investigation)
+- [Testing](#-testing)
+- [Current Limitations](#-current-limitations)
+- [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
+- [Responsible Use](#-responsible-use)
 
-✨ Key Features
+---
 
-🔍 Security Event Analysis
+## 🚀 Overview
 
-The system converts raw security logs into structured events and identifies suspicious activity through a multi-stage investigation pipeline.
+Security logs contain valuable information about system activities, authentication attempts, network events, and potentially suspicious behavior.
 
-CSV Log Ingestion — Imports security events from sample CSV logs.
+However, investigating these events manually can be time-consuming, particularly when multiple activities are related to the same incident.
 
-Event Normalization — Converts raw events into a common OCSF-inspired structure.
+AI Attack Chain Investigator addresses this problem through a structured investigation pipeline.
 
-Anomaly Detection — Assigns anomaly scores to suspicious events.
+### Core Objectives
 
-Event Correlation — Groups related security events into incidents.
+- Import security events from CSV logs.
+- Normalize raw security events into an OCSF-inspired structure.
+- Detect suspicious activities using anomaly detection.
+- Correlate related security events into incidents.
+- Reconstruct chronological attack chains.
+- Calculate deterministic incident risk scores.
+- Extract supporting evidence from security events.
+- Generate evidence-grounded incident explanations.
+- Visualize investigation results through a SOC-style dashboard.
 
-Attack-Chain Reconstruction — Builds a chronological sequence of related activities.
+The application combines automated security analysis with explainable investigation results, helping users understand not only what happened but also why an incident was considered suspicious.
 
-Risk Scoring — Calculates a deterministic risk score and risk level.
+---
 
-Evidence Extraction — Identifies verified events supporting an incident.
+## ✨ Key Features
 
-Explainable Investigation — Generates an evidence-grounded explanation of why an incident is risky.
+### 🔍 Security Event Analysis
 
-🖥️ SOC-Style Dashboard
+The backend processes raw security logs through a multi-stage investigation pipeline.
 
-A modern React-based interface provides a centralized view of security activity.
+**CSV Log Ingestion**
 
-Security Overview — High-level view of monitored events and incidents.
+Imports security events from sample CSV log files.
 
-Incident Listing — Displays correlated incidents with risk information.
+**Event Normalization**
 
-Investigation View — Detailed analysis of individual incidents.
+Converts raw security events into a common OCSF-inspired structure.
 
-Attack Chain Visualization — Shows suspicious events in chronological order.
+**Anomaly Detection**
 
-Risk Factors — Displays the factors contributing to an incident's score.
+Assigns anomaly scores to identify potentially suspicious events.
 
-Evidence Cards — Presents important events supporting the investigation.
+**Event Correlation**
 
-Investigation Explanation — Provides a readable summary of the incident.
+Groups related security events into incidents based on correlation logic.
 
-⚙️ Backend & API
+**Attack-Chain Reconstruction**
 
-The backend provides a FastAPI service for processing and exposing investigation results.
+Builds a chronological sequence of related activities to represent potential attack progression.
 
-REST API endpoints
+**Risk Scoring**
 
-SQLAlchemy database integration
+Calculates deterministic incident risk scores and assigns corresponding risk levels.
 
-SQLite storage
+**Evidence Extraction**
 
-Pandas-based CSV processing
+Identifies important events supporting an incident assessment.
 
-Automatic database table creation
+**Explainable Investigation**
 
-Interactive Swagger API documentation
+Generates evidence-grounded explanations describing why an incident is considered risky.
 
-🏗️ Architecture
+### 🖥️ SOC-Style Dashboard
 
-                Security Logs
-                      │
-                      ▼
-                Log Ingestion
-                      │
-                      ▼
-             Event Normalization
-                      │
-                      ▼
-              Anomaly Detection
-                      │
-                      ▼
-              Event Correlation
-                      │
-                      ▼
-          Attack-Chain Reconstruction
-                      │
-                      ▼
-                 Risk Scoring
-                      │
-                      ▼
-              Evidence Extraction
-                      │
-                      ▼
-           Explainable Investigation
-                      │
-                      ▼
-              React SOC Dashboard
+A React-based interface provides a centralized view of security activity and investigation results.
+
+**Security Overview**
+
+Displays high-level information about monitored events and incidents.
+
+**Incident Listing**
+
+Presents correlated incidents with their associated risk information.
+
+**Investigation View**
+
+Provides detailed analysis of individual incidents.
+
+**Attack Chain Visualization**
+
+Displays suspicious activities in chronological order.
+
+**Risk Factors**
+
+Highlights factors contributing to an incident's risk score.
+
+**Evidence Cards**
+
+Presents important events supporting the investigation.
+
+**Investigation Explanation**
+
+Provides readable summaries explaining the incident assessment.
+
+### ⚙️ Backend & API
+
+The FastAPI backend provides the processing engine and REST API for the application.
+
+- REST API endpoints
+- SQLAlchemy database integration
+- SQLite storage
+- Pandas-based CSV processing
+- Automatic database table creation
+- Interactive Swagger API documentation
+
+---
+
+## 🏗️ System Architecture
 
-📸 Screenshots
+The application follows a modular full-stack architecture.
 
-Security Dashboard
+### Investigation Pipeline
 
-![Security Dashboard](screenshots/dashboard.png)
+```text
+              SECURITY LOGS
+                    |
+                    v
+               Log Ingestion
+                    |
+                    v
+           Event Normalization
+                    |
+                    v
+            Anomaly Detection
+                    |
+                    v
+             Event Correlation
+                    |
+                    v
+        Attack-Chain Reconstruction
+                    |
+                    v
+               Risk Scoring
+                    |
+                    v
+             Evidence Extraction
+                    |
+                    v
+          Explainable Investigation
+                    |
+                    v
+             React SOC Dashboard
+```
 
-Incidents
+### Application Architecture
 
-![Incidents](screenshots/incidents.png)
+```text
+                USER
+                  |
+                  v
+        +---------------------+
+        |   React Frontend    |
+        |   Vite Application  |
+        +---------------------+
+                  |
+                  | HTTP Requests
+                  v
+        +---------------------+
+        |    FastAPI Backend  |
+        +---------------------+
+                  |
+                  v
+        +---------------------+
+        | Investigation       |
+        | Services            |
+        +---------------------+
+                  |
+          +-------+-------+
+          |               |
+          v               v
+     Data Processing   Risk & Evidence
+          |               |
+          +-------+-------+
+                  |
+                  v
+        +---------------------+
+        |   SQLAlchemy ORM    |
+        +---------------------+
+                  |
+                  v
+        +---------------------+
+        |    SQLite Database |
+        +---------------------+
+```
 
-Investigation
+---
 
-![Investigation](screenshots/investigation.png)
+## 🔄 Investigation Workflow
 
-🛠️ Tech Stack
+The complete V1 investigation pipeline consists of the following stages.
 
-Component
+**Step 1 — CSV Log Ingestion**
 
-Technology
+Security events are imported from sample CSV files.
 
-Frontend
+**Step 2 — Event Normalization**
 
-React, Vite, JavaScript
+Raw log entries are converted into a standardized, OCSF-inspired event structure.
 
-UI Icons
+**Step 3 — Anomaly Detection**
 
-Lucide React
+The system analyzes normalized events and assigns anomaly scores.
 
-Backend
+**Step 4 — Event Correlation**
 
-Python, FastAPI
+Related events are grouped together to identify potential incidents.
 
-Data Processing
+**Step 5 — Attack-Chain Reconstruction**
 
-Pandas
+Correlated events are arranged chronologically to reconstruct suspicious activity sequences.
 
-ORM
+**Step 6 — Risk Scoring**
 
-SQLAlchemy
+A deterministic risk engine calculates incident risk scores and assigns risk levels.
 
-Database
+**Step 7 — Evidence Extraction**
 
-SQLite
+Supporting security events are extracted for individual incidents.
 
-API Documentation
+**Step 8 — Explainable Investigation**
 
-FastAPI / Swagger
+The system generates explanations grounded in the available incident evidence.
 
-🚀 Quick Start
+**Step 9 — Dashboard Visualization**
 
-Prerequisites
+The frontend presents incident information, attack chains, risk factors, evidence, and explanations.
 
-Make sure you have:
+### Complete Workflow
 
-Python 3.x
-
-Node.js and npm
-
-Git
-
-1. Clone the Repository
-
-git clone https://github.com/Asiifa/AI-Attack-Chain.git
-cd AI-Attack-Chain
-
-2. Create the Python Virtual Environment
-
-python -m venv venv
-
-3. Activate the Environment
-
-For Windows PowerShell:
-
-.\venv\Scripts\Activate.ps1
-
-4. Install Backend Dependencies
-
-pip install -r requirements.txt
-
-5. Install Frontend Dependencies
-
-cd frontend
-npm install
-
-▶️ Run the Application
-
-The backend and frontend run in separate terminals.
-
-Backend
-
-From the project root:
-
-uvicorn backend.main:app --reload
-
-Backend:
-
-http://localhost:8000
-
-Swagger API documentation:
-
-http://localhost:8000/docs
-
-Frontend
-
-Open another terminal:
-
-cd frontend
-npm run dev
-
-Frontend:
-
-http://localhost:5173
-
-🔄 Investigation Workflow
-
-The complete V1 pipeline is:
-
-CSV Logs
-    ↓
-Normalization
-    ↓
-Anomaly Detection
-    ↓
-Event Correlation
-    ↓
+```text
+CSV Security Logs
+        |
+        v
+   Normalization
+        |
+        v
+ Anomaly Detection
+        |
+        v
+ Event Correlation
+        |
+        v
 Attack-Chain Reconstruction
-    ↓
-Risk Score
-    ↓
-Evidence
-    ↓
-Explanation
-    ↓
-Dashboard
+        |
+        v
+    Risk Score
+        |
+        v
+     Evidence
+        |
+        v
+   Explanation
+        |
+        v
+     Dashboard
+```
 
-🌐 API Endpoints
+---
 
-Method
+## 🧩 Technology Stack
 
-Endpoint
+| Component | Technology |
+|---|---|
+| Programming Language | Python |
+| Frontend Framework | React |
+| Frontend Build Tool | Vite |
+| Frontend Language | JavaScript |
+| UI Icons | Lucide React |
+| Backend Framework | FastAPI |
+| Data Processing | Pandas |
+| ORM | SQLAlchemy |
+| Database | SQLite |
+| API Documentation | Swagger UI |
+| API Communication | REST API |
 
-Purpose
+---
 
-GET
+## 📂 Project Structure
 
-/
+The project follows a modular structure that separates backend processing, database operations, frontend components, sample data, and application documentation.
 
-Check API status
-
-GET
-
-/health
-
-Health check
-
-POST
-
-/ingest
-
-Import sample security logs
-
-GET
-
-/events
-
-Retrieve security events
-
-GET
-
-/events/count
-
-Get total event count
-
-GET
-
-/events/normalized
-
-View normalized events
-
-GET
-
-/events/anomalies
-
-View detected anomalies
-
-GET
-
-/incidents/correlated
-
-View correlated incidents
-
-GET
-
-/incidents/reconstructed
-
-View reconstructed attack chains
-
-GET
-
-/incidents/risk
-
-View incident risk scores
-
-GET
-
-/incidents/evidence
-
-View incident evidence
-
-GET
-
-/incidents/explanation
-
-View incident explanations
-
-Interactive API documentation:
-
-http://localhost:8000/docs
-
-📂 Project Structure
-
+```text
 AI-Attack-Chain/
 │
 ├── backend/
+│   │
 │   ├── main.py
 │   │
 │   ├── database/
@@ -335,11 +336,15 @@ AI-Attack-Chain/
 │       └── explanation.py
 │
 ├── frontend/
+│   │
 │   ├── src/
 │   │   ├── pages/
 │   │   │   └── Investigation.jsx
+│   │   │
 │   │   ├── services/
+│   │   │
 │   │   └── ...
+│   │
 │   └── ...
 │
 ├── data/
@@ -354,104 +359,335 @@ AI-Attack-Chain/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
+### Directory Responsibilities
 
-🧪 Testing
+| Directory / File | Description |
+|---|---|
+| `backend/` | FastAPI backend application |
+| `backend/main.py` | API entry point and endpoint definitions |
+| `backend/database/` | Database connection and schema definitions |
+| `backend/services/` | Investigation and security analysis modules |
+| `frontend/` | React + Vite frontend application |
+| `frontend/src/pages/` | Frontend application pages |
+| `frontend/src/services/` | Frontend API communication |
+| `data/sample/` | Sample security log datasets |
+| `screenshots/` | Application screenshots |
+| `requirements.txt` | Python backend dependencies |
+| `.gitignore` | Files and directories excluded from Git |
+| `README.md` | Project documentation |
 
-The backend can be tested using the interactive Swagger interface:
+---
 
+## ⚙️ Installation & Setup
+
+### Prerequisites
+
+Make sure the following are installed:
+
+- Python 3.x
+- Node.js
+- npm
+- Git
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Asiifa/AI-Attack-Chain.git
+```
+
+Navigate into the project directory:
+
+```bash
+cd AI-Attack-Chain
+```
+
+### 2. Create a Python Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### 3. Activate the Environment
+
+**Windows PowerShell:**
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+### 4. Install Backend Dependencies
+
+From the project root:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Install Frontend Dependencies
+
+Navigate into the frontend directory:
+
+```bash
+cd frontend
+```
+
+Install the required packages:
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Running the Application
+
+The backend and frontend run independently in separate terminals.
+
+### 1. Start the Backend
+
+Open a terminal in the project root.
+
+Activate the virtual environment if it is not already active.
+
+Run:
+
+```bash
+uvicorn backend.main:app --reload
+```
+
+**Backend URL:**
+
+```text
+http://localhost:8000
+```
+
+**Interactive Swagger Documentation:**
+
+```text
 http://localhost:8000/docs
+```
 
-The main frontend flow can be verified through:
+### 2. Start the Frontend
 
+Open another terminal.
+
+Navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+**Frontend URL:**
+
+```text
+http://localhost:5173
+```
+
+### Application Access
+
+| Component | URL |
+|---|---|
+| React Dashboard | http://localhost:5173 |
+| FastAPI Backend | http://localhost:8000 |
+| Swagger Documentation | http://localhost:8000/docs |
+
+---
+
+## 🌐 API Endpoints
+
+The FastAPI backend exposes REST endpoints for security event ingestion, incident analysis, and investigation results.
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/` | Check API status |
+| GET | `/health` | Health check |
+| POST | `/ingest` | Import sample security logs |
+| GET | `/events` | Retrieve security events |
+| GET | `/events/count` | Get total event count |
+| GET | `/events/normalized` | View normalized events |
+| GET | `/events/anomalies` | View detected anomalies |
+| GET | `/incidents/correlated` | View correlated incidents |
+| GET | `/incidents/reconstructed` | View reconstructed attack chains |
+| GET | `/incidents/risk` | View incident risk scores |
+| GET | `/incidents/evidence` | View incident evidence |
+| GET | `/incidents/explanation` | View incident explanations |
+
+### Interactive API Documentation
+
+FastAPI automatically provides interactive Swagger documentation.
+
+Access it at:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
+## 🖥️ Dashboard & Investigation
+
+The React frontend provides a SOC-style interface for understanding security activity and investigating suspicious incidents.
+
+### Security Dashboard
+
+Displays the overall security activity and incident overview.
+
+![Security Dashboard](screenshots/dashboard.png)
+
+### Incidents
+
+Displays correlated incidents with their associated risk information.
+
+![Incidents](screenshots/incidents.png)
+
+### Investigation
+
+Provides a detailed view of an individual incident.
+
+![Investigation](screenshots/investigation.png)
+
+### Investigation Details
+
+The investigation page presents:
+
+- Incident details
+- Attack chain
+- Investigation timeline
+- Risk factors
+- Supporting evidence
+- Explainable investigation summary
+
+---
+
+## 🧪 Testing
+
+The backend can be tested through the interactive Swagger interface.
+
+```text
+http://localhost:8000/docs
+```
+
+### Main Frontend Workflow
+
+The primary frontend flow can be verified through the following sequence:
+
+```text
 Dashboard
-    ↓
-Incidents
-    ↓
+    |
+    v
+ Incidents
+    |
+    v
 Investigation
+```
 
-The investigation page should display:
+### Investigation Validation
 
-Incident details
+Verify that the investigation page correctly displays:
 
-Attack chain
+- Incident details
+- Reconstructed attack chain
+- Investigation timeline
+- Risk factors
+- Supporting evidence
+- Investigation explanation
 
-Investigation timeline
+The sample CSV dataset can be used to validate the ingestion and investigation workflow.
 
-Risk factors
+---
 
-Evidence
+## ⚠️ Current Limitations
 
-Explanation
+The current V1 implementation is designed as an academic project and operates with a defined set of data sources and investigation rules.
 
-⚠️ Current Limitations
+Current limitations include:
 
-The current V1 implementation is designed as an academic project and uses:
+**Sample Security Logs**
 
-Sample security logs
+The application currently uses sample security log datasets.
 
-CSV-based ingestion
+**CSV-Based Ingestion**
 
-Local SQLite storage
+Log ingestion is based on CSV files.
 
-Deterministic risk scoring
+**Local Database**
 
-A limited set of event types and correlation rules
+SQLite is used for local data storage.
 
-It is not intended to replace a production SIEM or enterprise incident-response platform.
+**Deterministic Risk Scoring**
 
-🚧 Roadmap
+Incident risk levels are calculated using deterministic scoring logic.
 
-V1 — Completed
+**Limited Event Types**
 
-CSV security log ingestion
+The current implementation supports a limited set of event types and correlation rules.
 
-Event normalization
+**Not a Production SIEM**
 
-Anomaly detection
+The application is an academic cybersecurity investigation project and is not intended to replace production SIEM or enterprise incident-response platforms.
 
-Event correlation
+---
 
-Attack-chain reconstruction
+## 🚧 Roadmap
 
-Risk scoring
+### V1 — Completed
 
-Evidence extraction
+- [x] CSV security log ingestion
+- [x] Event normalization
+- [x] Anomaly detection
+- [x] Event correlation
+- [x] Attack-chain reconstruction
+- [x] Incident risk scoring
+- [x] Evidence extraction
+- [x] Explainable investigation
+- [x] SOC-style dashboard
 
-Explainable investigation
+### V2 — Planned
 
-SOC-style dashboard
+- [ ] JSON log support
+- [ ] Multiple log-source support
+- [ ] MITRE ATT&CK technique mapping
+- [ ] Automated investigation reports
+- [ ] Advanced attack-chain analysis
 
-V2 — Planned
+---
 
-JSON log support
-
-Multiple log-source support
-
-MITRE ATT&CK technique mapping
-
-Automated investigation reports
-
-Advanced attack-chain analysis
-
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions, suggestions, and improvements are welcome.
 
 To contribute:
 
-Fork the repository.
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Test the application.
+5. Submit a pull request.
 
-Create a feature branch.
+---
 
-Make your changes.
+## 🔐 Responsible Use
 
-Test the application.
+AI Attack Chain Investigator is intended for:
 
-Submit a pull request.
-
-🔐 Responsible Use
-
-This project is intended for defensive cybersecurity research, education, security monitoring, and authorized incident investigation.
+- Defensive cybersecurity research.
+- Cybersecurity education.
+- Security monitoring.
+- Authorized incident investigation.
+- Security event analysis.
 
 Only use the system with security data and systems that you are authorized to analyze.
+
+The investigation results should be treated as decision-support information and reviewed by qualified security personnel before taking operational action.
+
+---
+
+**AI Attack Chain Investigator — Turning Security Logs into Explainable Attack Investigations.**
